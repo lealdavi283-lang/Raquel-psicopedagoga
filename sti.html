@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raquel Da Silva Clementino - Psicopedagoga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f7fa;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      display: flex;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Barra lateral */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 70px;
+      height: 100%;
+      background-color: #dc6fba; /* rosa */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      gap: 20px;
+      z-index: 1000;
+    }
+
+    .sidebar a {
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #dc6fba;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .sidebar a:hover {
+      background-color: #ffe0f0;
+      color: #6b1a6b;
+    }
+
+    /* Conteúdo principal */
+    .main-content {
+      margin-left: 80px; /* espaço para a barra lateral */
+      width: calc(100% - 80px);
+    }
+
+    /* Header rosa */
+    header {
+      background-color: #dc6fba;
+      color: white;
+      text-align: center;
+      padding: 60px 20px 40px;
+      position: relative;
+    }
+
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    header img {
+      width: 150px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      font-weight: bold;
+      color: white;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #ffe0f0; }
+
+    /* Sections */
+    section {
+      padding: 80px 20px 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #6b1a6b;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
+
+    /* Sobre */
+    .sobre-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .sobre-container img {
+      width: 350px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .sobre-container .texto-sobre {
+      max-width: 500px;
+    }
+
+    /* Cards */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
+      max-width: 350px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    /* Botão WhatsApp */
+    .whatsapp-btn {
+      background-color: #25d366;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-size: 18px;
+      display: inline-block;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+
+    .whatsapp-btn:hover { background-color: #1ebe5d; }
+
+    /* Footer */
+    footer {
+      background-color: #e0e0e0;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer .social i {
+      margin: 0 10px;
+      font-size: 20px;
+      color: #6b1a6b;
+      transition: color 0.3s;
+    }
+
+    footer .social i:hover { color: #dc6fba; }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
+      .sidebar {
+        position: relative;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        height: auto;
+        padding: 10px 0;
+        gap: 10px;
+      }
+      .sidebar a { width: auto; height: auto; padding: 10px 15px; font-size: 14px; }
+      .main-content { margin-left: 0; width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Barra lateral -->
+  <div class="sidebar">
+    
+    <a href="#inicio">inicio</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#publico">Público</a>
+    <a href="#contato">contato</a>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <header>
+      <h1>Raquel Da Silva Clementino</h1>
+      <p>Psicopedagoga</p>
+      <img src="img/psico.png" alt="Logo Psicopedagoga">
+      
+    </header>
+
+    <section id="inicio">
+      <h2>Sobre</h2>
+      <div class="sobre-container">
+        <img src="img/WhatsApp Image 2026-04-26 at 14.57.13.png">
+        <div class="texto-sobre">
+          <p>Sou Psicopedagoga e pedagoga, apaixonada pelo desenvolvimento humano e pelos processos de aprendizagem.</p>
+          <p> Minha atuação é pautada na ética, sensibilidade e escuta atenta, buscando compreender cada indivíduo de forma única, respeitando sua história, dificuldades e potencialidades.</p>
+          <p>Trabalho com foco na identificação e superação das dificuldades de aprendizagem, promovendo o desenvolvimento cognitivo, emocional e educacional de forma personalizada.</p>
+          <P>Também sou aplicadora do método <strong>PAP – Prática de Aprendizagem e Potencialização Humana</strong>, que contribui para potencializar habilidades, fortalecer a autoestima e melhorar o desempenho no processo de aprendizagem.
+      </p></P>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <h2>Serviços</h2>
+      <div class="cards">
+        <div class="card">
+         <img src="img/Avaliacao-Psicopedagogica.png" alt="Avaliacao psicopedagogica">
+          <p>Avaliação psicopedagógica</p>
+        </div>
+        <div class="card">
+          <img src="img/download.png">
+          <p>Prevenção e intervenção das dificuldades de aprendizagem</p>
+        </div>
+        <div class="card">
+          <img src="img/images.png">
+          <p>Orientação educacional</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publico">
+      <h2>Público atendido</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="img/d.png">
+          <p>Crianças</p>
+        </div>
+        <div class="card">
+          <img src="img/s.png">
+          <p>Adolescentes</p>
+        </div>
+        <div class="card">
+          <img src="img/autismo-adulto.png">
+          <p>Adultos</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Agende um atendimento pelo WhatsApp:</p>
+      <a href="https://wa.me/5567992040442" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+      </a>
+    </section>
+
+    <footer>
+      <p>© 2026 - Raquel Da Silva Clementino - Psicopedagoga</p>
+      <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
